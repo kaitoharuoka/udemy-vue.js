@@ -1,28 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div>
+  <LikeHeader></LikeHeader>
+  <h2>{{ number }}</h2>
+  <LikeNumber :number="number"></LikeNumber>
+  <LikeNumber :number="number"></LikeNumber>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LikeHeader from './components/LikeHeader.vue';
 
 export default {
-  name: 'App',
+  data() {
+    return {
+      number: 14
+    };
+  },
   components: {
-    HelloWorld
+    LikeHeader: LikeHeader
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+  div {
+    border: 1px solid blue;
+  }
 </style>
