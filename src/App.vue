@@ -1,26 +1,33 @@
 <template>
 <div>
   <LikeHeader>
-    <h1>トータルのいいね数</h1>
-    <h2>{{ number }}</h2>
+    <h2>はじめまして</h2>
   </LikeHeader>
-  <h2>{{ number }}</h2>
   <LikeNumber :total-number="number" @my-click="incrementNumber"></LikeNumber>
-  <LikeNumber :total-number="number"></LikeNumber>
+  <button @click="currentComponent = 'Home'">Home</button>
+  <button @click="currentComponent = 'About'">>About</button>
+  <keep-alive>
+  <component :is="currentComponent"></component>
+  </keep-alive>
 </div>
 </template>
 
 <script>
 import LikeHeader from './components/LikeHeader.vue';
+import About from "./components/About.vue";
+import Home from "./components/Home.vue";
 
 export default {
   data() {
     return {
-      number: 14
+      number: 14,
+      currentComponent: 'Home'
     };
   },
   components: {
-    LikeHeader
+    LikeHeader,
+    About,
+    Home
   },
   methods: {
     incrementNumber(value) {
