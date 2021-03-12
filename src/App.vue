@@ -18,6 +18,7 @@
   </div>
 </template>
 
+
 <style scoped>
   .link {
     margin-right: 10px;
